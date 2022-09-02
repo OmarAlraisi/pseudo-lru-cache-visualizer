@@ -1,0 +1,29 @@
+.request-form--main-root {
+  height: 120px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.request-form--form {
+  display: flex;
+  justify-content: space-between;
+  width: 325px;
+}
+
+.request-form--form input {
+  width: 175px;
+  height: 30px;
+}
+
+.request-form--form button {
+  width: 100px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid black;
+}

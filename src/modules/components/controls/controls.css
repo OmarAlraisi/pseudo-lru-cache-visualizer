@@ -1,0 +1,20 @@
+.controls--main-root {
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 15px;
+  border-bottom: solid 1px black;
+}
+
+.controls--clear-cache-button {
+  height: 45px;
+  width: 150px;
+  font-size: 20px;
+  color: red;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 35px;
+  border: 1px solid red;
+  border-radius: 5px;
+}

@@ -1,0 +1,16 @@
+.cache-graph {
+  width: 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.block-node {
+  fill: darkslategrey;
+  stroke: black;
+}
+
+.hide-edge {
+  opacity: 0;
+}
