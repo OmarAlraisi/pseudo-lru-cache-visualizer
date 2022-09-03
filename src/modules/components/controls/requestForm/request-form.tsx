@@ -3,12 +3,14 @@ import "./request-form.css";
 
 const RequestForm = () => {
   const [fieldText, setFieldText] = useState("");
-  const handleFieldChange = (text: any) => {
-    setFieldText(text.target.value);
+  const handleFieldChange = (event: any) => {
+    setFieldText(event.target.value);
   };
 
-  const sendRequest = () => {
+  const sendRequest = (event: any) => {
     // hand request
+    setFieldText("");
+    event.preventDefault();
   };
 
   return (
@@ -16,12 +18,13 @@ const RequestForm = () => {
       <form
         action="submit"
         className="request-form--form"
-        onSubmit={() => sendRequest()}
+        onSubmit={(event) => sendRequest(event)}
       >
         <input
           type="text"
           placeholder="Request key..."
-          onChange={(text) => handleFieldChange(text)}
+          value={fieldText}
+          onChange={(event) => handleFieldChange(event)}
         />
         <button type="submit">Request</button>
       </form>

@@ -8,6 +8,11 @@
   bottom: 0;
 }
 
+.App select:hover,
+.App button:hover {
+  cursor: pointer;
+}
+
 .body {
   display: flex;
   height: calc(100% - 120px);

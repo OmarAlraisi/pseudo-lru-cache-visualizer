@@ -1,0 +1,16 @@
+.cache-size-selector--main-root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cache-size-selector--label {
+  font-size: large;
+  margin-right: 20px;
+}
+
+.cache-size-selector--selector {
+  padding: 10px;
+  border: none;
+  font-size: large;
+}
