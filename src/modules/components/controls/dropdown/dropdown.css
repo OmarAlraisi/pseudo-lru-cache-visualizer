@@ -1,6 +1,5 @@
 .block-selector--options {
   padding: 0 10px;
-  overflow-y: scroll;
 }
 
 .block-selector--options-choice {
@@ -22,6 +21,7 @@
 
 .block-selector--main-root {
   display: flex;
+  z-index: 999;
 }
 
 .block-selector--label {
@@ -95,13 +95,13 @@
     max-height: 60px;
   }
   100% {
-    max-height: 300px;
+    max-height: 303px;
   }
 }
 
 @keyframes unexpand-menu {
   0% {
-    max-height: 300px;
+    max-height: 303px;
   }
   100% {
     max-height: 60px;

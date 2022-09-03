@@ -18,7 +18,11 @@ const RequestForm = () => {
         className="request-form--form"
         onSubmit={() => sendRequest()}
       >
-        <input type="text" onChange={(text) => handleFieldChange(text)} />
+        <input
+          type="text"
+          placeholder="Request key..."
+          onChange={(text) => handleFieldChange(text)}
+        />
         <button type="submit">Request</button>
       </form>
     </div>
