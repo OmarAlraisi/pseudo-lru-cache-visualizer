@@ -1,113 +1,34 @@
-import { Canvas } from "reaflow";
+import { useMemo } from "react";
+import { useSelector } from "react-redux";
+import { Canvas, EdgeData, NodeData } from "reaflow";
+import { AppQueries } from "../../../store/queries/app-queries";
+import { createEdges, createNodes } from "./canvas-helper";
 import "./tree.css";
 
 const CacheTree = () => {
+
+  let nodes: ({ id: string; text: string; height: number; width: number; disabled: boolean; className?: undefined; } | { id: string; text: string; height: number; width: number; className: string; disabled: boolean; })[] | NodeData<any>[] | undefined = [],
+      edges: { id: string; from: string; to: string; disabled: boolean; className: string; }[] | EdgeData<any>[] | undefined = [];
+  const numOfBlocks = useSelector(AppQueries.getNumOfBlocks),
+        updateHelper = useSelector(AppQueries.getTreeUpdateHelper),
+        treeNodes = useSelector(AppQueries.getTreeNodes);
+
+  useMemo(() => {
+    nodes = createNodes(treeNodes);
+    edges = createEdges(treeNodes, numOfBlocks);
+  }, [updateHelper, treeNodes]);
+
   return (
     <div className="cache-tree">
       <div>
         <Canvas
           direction="RIGHT"
-          maxWidth={800}
-          maxHeight={600}
-          nodes={[
-            // Bit Nodes
-            {
-              id: "1",
-              text: "1",
-              height: 65,
-              width: 65,
-              disabled: true,
-            },
-            {
-              id: "2",
-              text: "2",
-              height: 65,
-              width: 65,
-              disabled: true,
-            },
-            {
-              id: "3",
-              text: "3",
-              height: 65,
-              width: 65,
-              disabled: true,
-            },
-
-            // Cache Blocks Nodes
-            {
-              id: "4",
-              text: "block-1",
-              height: 80,
-              width: 80,
-              className: "block-node",
-              disabled: true,
-            },
-            {
-              id: "5",
-              text: "block-2",
-              height: 80,
-              width: 80,
-              className: "block-node",
-              disabled: true,
-            },
-            {
-              id: "6",
-              text: "block-3",
-              height: 80,
-              width: 80,
-              className: "block-node",
-              disabled: true,
-            },
-            {
-              id: "7",
-              text: "block-4",
-              height: 80,
-              width: 80,
-              className: "block-node",
-              disabled: true,
-            },
-          ]}
-          edges={[
-            {
-              id: "1-2",
-              from: "1",
-              to: "2",
-              disabled: true,
-            },
-            {
-              id: "1-3",
-              from: "1",
-              to: "3",
-              className: "hide-edge",
-              disabled: true,
-            },
-            {
-              id: "2-4",
-              from: "2",
-              to: "4",
-              disabled: true,
-            },
-            {
-              id: "2-5",
-              from: "2",
-              to: "5",
-              className: "hide-edge",
-              disabled: true,
-            },
-            {
-              id: "3-6",
-              from: "3",
-              to: "6",
-              disabled: true,
-            },
-            {
-              id: "3-7",
-              from: "3",
-              to: "7",
-              className: "hide-edge",
-              disabled: true,
-            },
-          ]}
+          maxWidth={800} // TODO: make dynamic
+          maxHeight={600} // same
+          fit={true}
+          minZoom={-0.95}
+          nodes={nodes}
+          edges={edges}
         />
       </div>
     </div>
