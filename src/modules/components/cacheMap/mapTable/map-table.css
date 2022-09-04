@@ -1,5 +1,5 @@
 .map-table--main-root {
-  max-height: calc(100% - 295px);
+  max-height: calc(100% - 250px);
   overflow-y: scroll;
 }
 
