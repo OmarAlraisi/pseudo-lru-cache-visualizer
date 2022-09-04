@@ -6,4 +6,6 @@ const getTreeNodes = (state: State) => state.app.tree.nodes;
 
 const getTreeUpdateHelper = (state: State) => state.app.tree.updateHelper;
 
-export const AppQueries = { getNumOfBlocks, getTreeNodes, getTreeUpdateHelper };
+const getStats = (state: State) => state.app.stats;
+
+export const AppQueries = { getNumOfBlocks, getTreeNodes, getTreeUpdateHelper, getStats };

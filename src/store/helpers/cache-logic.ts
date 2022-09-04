@@ -2,15 +2,24 @@ import { AppState } from "../types/app-state-types";
 import { CacheBit, CacheBlock, DirectionEnum } from "../types/classes-and-enums-types";
 
 const get = (key: string, state: AppState) => {
-  const { map, tree } = state;
+  const { map, tree, controls, stats } = state;
+  const { numOfBlocks } = controls
+  let { numOfHits, numOfMisses } = stats;
   if (!map.has(key)) {
     // cache miss
     addToCache(key, tree.rootNode, map);
+    numOfMisses += 1;
   } else {
     // cache hit
     navigateToBlock(map.get(key)!, tree.rootNode);
+    numOfHits += 1;
   }
   navigateToNextLRBlock(map.get(key)!, tree.rootNode);
+  return {
+    numOfEmptyBlocks: numOfBlocks - map.size,
+    numOfMisses: numOfMisses,
+    numOfHits: numOfHits,
+  }
 }
 
 const addToCache = (key: string, treeRoot: CacheBit, map: Map<string, string>) => {

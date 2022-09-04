@@ -36,9 +36,10 @@ export default handleActions<AppState, any> ({
     {payload}: ReturnType<typeof getRequest>
   ) {
     const { key } = payload;
-    Cache.get(key, state);
+    const stats = Cache.get(key, state);
     return {
       ...state,
+      stats: stats,
       tree: {
         ...state.tree,
         updateHelper: !state.tree.updateHelper,
