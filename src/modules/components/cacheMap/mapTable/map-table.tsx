@@ -1,29 +1,24 @@
 import { useMemo } from "react";
+import { useSelector } from "react-redux";
+import { AppQueries } from "../../../../store/queries/app-queries";
 import "./map-table.css";
 import TableRow from "./table-row";
 
 const MapTable = () => {
-  const cache = new Map<String, String>();
-  cache.set("CA", "11");
-  cache.set("WY", "10");
-  cache.set("SC", "01");
-  cache.set("NY", "00");
-  cache.set("CB", "11");
-  cache.set("WZ", "10");
-  cache.set("SD", "01");
-  cache.set("NZ", "00");
+  const map = useSelector(AppQueries.getMap);
+  const updateHelper = useSelector(AppQueries.getTreeUpdateHelper);
 
   let cacheKeys: string[] = [];
   useMemo(() => {
     cacheKeys = [];
-    const keys = cache.keys();
+    const keys = map.keys();
     var k;
     while ((k = keys.next().value)) cacheKeys.push(String(k));
-  }, [cache]);
+  }, [updateHelper]);
   return (
     <div className="map-table--main-root">
       {cacheKeys.map((key) => (
-        <TableRow mapKey={key} path={cache.get(key)!} />
+        <TableRow mapKey={key} path={map.get(key)!} />
       ))}
     </div>
   );

@@ -8,4 +8,6 @@ const getTreeUpdateHelper = (state: State) => state.app.tree.updateHelper;
 
 const getStats = (state: State) => state.app.stats;
 
-export const AppQueries = { getNumOfBlocks, getTreeNodes, getTreeUpdateHelper, getStats };
+const getMap = (state: State) => state.app.map;
+
+export const AppQueries = { getNumOfBlocks, getTreeNodes, getTreeUpdateHelper, getStats, getMap };
