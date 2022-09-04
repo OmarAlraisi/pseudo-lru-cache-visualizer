@@ -5,4 +5,9 @@ const setCacheBlockSize = createAction(
   (numOfBlocks: number) => ({ numOfBlocks })
 );
 
-export const controlsActions = { setCacheBlockSize };
+const getRequest = createAction(
+  "APP--CONTROLS--GET-REQUEST",
+  (key: string) => ({ key })
+)
+
+export const controlsActions = { setCacheBlockSize, getRequest };

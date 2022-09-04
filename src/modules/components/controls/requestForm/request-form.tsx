@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppActions } from "../../../../store/actions";
 import "./request-form.css";
 
 const RequestForm = () => {
@@ -7,8 +9,11 @@ const RequestForm = () => {
     setFieldText(event.target.value);
   };
 
+  const dispatch = useDispatch();
+
   const sendRequest = (event: any) => {
     // hand request
+    dispatch(AppActions.controlsActions.getRequest(fieldText));
     setFieldText("");
     event.preventDefault();
   };
