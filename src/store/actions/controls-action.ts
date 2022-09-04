@@ -8,6 +8,10 @@ const setCacheBlockSize = createAction(
 const getRequest = createAction(
   "APP--CONTROLS--GET-REQUEST",
   (key: string) => ({ key })
+);
+
+const clearCache = createAction(
+  "APP--CONTROLS--CLEAR-CACHE"
 )
 
-export const controlsActions = { setCacheBlockSize, getRequest };
+export const controlsActions = { setCacheBlockSize, getRequest, clearCache };

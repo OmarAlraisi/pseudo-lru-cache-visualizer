@@ -21,7 +21,7 @@ const createAppState = (numOfBlocks: number) => {
 
 const initAppState = createAppState(2);
 
-const { setCacheBlockSize, getRequest } = controlsActions;
+const { setCacheBlockSize, getRequest, clearCache } = controlsActions;
 
 export default handleActions<AppState, any> ({
   [setCacheBlockSize.toString()] (
@@ -44,5 +44,10 @@ export default handleActions<AppState, any> ({
         updateHelper: !state.tree.updateHelper,
       }
     };
+  },
+  [clearCache.toString()] (
+    state
+  ) {
+    return createAppState(state.controls.numOfBlocks);
   },
 }, initAppState);
