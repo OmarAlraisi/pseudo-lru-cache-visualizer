@@ -6,11 +6,57 @@
   justify-content: center;
 }
 
-.block-node {
-  fill: darkslategrey;
+.node {
+  fill: whitesmoke;
   stroke: black;
 }
 
+.block-node {
+  fill: lightcyan;
+}
+
+/* This is the lru block */
+.lru-block-node {
+  fill: lightblue;
+}
+
+/* stale edges */
+.edge {
+}
+
+/* hidden eddges */
 .hide-edge {
+  stroke-dasharray: 5;
+  /* animation: animate-line 5s linear infinite, hide-edge 0.5s ease-in; */
   opacity: 0;
+}
+
+/* edges that lead to lru block */
+.animate-edge {
+  stroke-dasharray: 5;
+  animation: edge-animation 0.5s ease-in, animate-line 5s linear infinite;
+}
+
+@keyframes animate-line {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes edge-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-edge {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

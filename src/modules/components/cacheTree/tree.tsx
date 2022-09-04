@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { Canvas, CanvasRef, EdgeData, NodeData } from "reaflow";
+import {
+  Canvas,
+  CanvasRef,
+  Edge,
+  EdgeData,
+  Label,
+  Node,
+  NodeData,
+} from "reaflow";
 import { AppQueries } from "../../../store/queries/app-queries";
 import { createEdges, createNodes } from "./canvas-helper";
 import "./tree.css";
@@ -15,7 +23,12 @@ const CacheTree = () => {
 
   useMemo(() => {
     nodes = createNodes(treeNodes);
-    edges = createEdges(treeNodes, numOfBlocks);
+    let lruBlock = -1;
+    [edges, lruBlock] = createEdges(treeNodes, numOfBlocks) as [
+      EdgeData<any>[],
+      number
+    ];
+    nodes[lruBlock].className += " lru-block-node";
   }, [updateHelper, treeNodes]);
 
   useEffect(() => {
@@ -40,6 +53,12 @@ const CacheTree = () => {
           nodes={nodes}
           edges={edges}
           ref={ref}
+          node={
+            <Node
+              className="node"
+              label={<Label style={{ fill: "black" }} />}
+            />
+          }
         />
       </div>
     </div>

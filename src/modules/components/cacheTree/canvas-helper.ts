@@ -1,3 +1,4 @@
+import { EdgeData } from "reaflow";
 import {
   CacheBit,
   CacheBlock,
@@ -20,8 +21,8 @@ export const createNodes = (treeNodes: (CacheBit | CacheBlock)[]) => {
       nodes.push({
         id: `${i}`,
         text: `${node.key}`,
-        height: 65,
-        width: 65,
+        height: 75,
+        width: 75,
         className: "block-node",
         disabled: true,
       });
@@ -35,7 +36,14 @@ export const createEdges = (
   treeNodes: (CacheBit | CacheBlock)[],
   numOfBlocks: number
 ) => {
-  const edges = [];
+  let lruBlock = -1;
+  const edges: {
+    id: string;
+    from: string;
+    to: string;
+    disabled: boolean;
+    className: string;
+  }[] = [];
   for (var i = 0; i < numOfBlocks - 1; i++) {
     edges.push({
       id: `${i}-${i * 2 + 1}`,
@@ -44,7 +52,9 @@ export const createEdges = (
       disabled: true,
       className:
         (treeNodes[i] as CacheBit).direction === DirectionEnum.UP
-          ? ""
+          ? i === 0 || edges[i - 1].className === "animate-edge"
+            ? "animate-edge"
+            : "edge"
           : "hide-edge",
     });
     edges.push({
@@ -55,8 +65,16 @@ export const createEdges = (
       className:
         (treeNodes[i] as CacheBit).direction === DirectionEnum.UP
           ? "hide-edge"
-          : "",
+          : i === 0 || edges[i - 1].className === "animate-edge"
+          ? "animate-edge"
+          : "edge",
     });
   }
-  return edges;
+  lruBlock =
+    treeNodes.length -
+    1 -
+    edges.reverse().findIndex((e) => e.className === "animate-edge");
+
+  edges.reverse();
+  return [edges, lruBlock];
 };
