@@ -15,7 +15,7 @@ const TableRow = ({ mapKey, data = "...", path, className }: TableRowProps) => {
       <span className="table-column--separator">:</span>
       <div className="table-column value">
         <span className="value-text path">
-          {path === "Graph Path" ? path : path.split("").join(" – ")}
+          {path === "Tree Path" ? path : path.split("").join(" – ")}
         </span>
         <span className="value-text data">{data}</span>
       </div>

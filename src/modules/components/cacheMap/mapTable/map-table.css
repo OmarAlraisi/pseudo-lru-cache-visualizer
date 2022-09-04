@@ -3,6 +3,10 @@
   overflow-y: scroll;
 }
 
+.map-table--main-root::-webkit-scrollbar {
+  display: none;
+}
+
 .table-row--main-root {
   width: 100%;
   padding: 20px;

@@ -1,5 +1,5 @@
 import "./App.css";
-import CacheGraph from "./components/cacheGraph/graph";
+import CacheTree from "./components/cacheTree/tree";
 import CacheMap from "./components/cacheMap/map";
 import Controls from "./components/controls/controls";
 
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Controls />
       <div className="body">
-        <CacheGraph />
+        <CacheTree />
         <CacheMap />
       </div>
     </div>

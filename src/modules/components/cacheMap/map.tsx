@@ -29,7 +29,7 @@ const CacheMap = () => {
   return (
     <div className="cache-map--main-root">
       {renderStats()}
-      <TableRow mapKey="Key" path="Graph Path" data="Data" className="header" />
+      <TableRow mapKey="Key" path="Tree Path" data="Data" className="header" />
       <MapTable />
     </div>
   );

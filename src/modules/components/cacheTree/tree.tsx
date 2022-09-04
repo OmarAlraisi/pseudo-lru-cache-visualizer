@@ -1,9 +1,9 @@
 import { Canvas } from "reaflow";
-import "./graph.css";
+import "./tree.css";
 
-const CacheGraph = () => {
+const CacheTree = () => {
   return (
-    <div className="cache-graph">
+    <div className="cache-tree">
       <div>
         <Canvas
           direction="RIGHT"
@@ -114,4 +114,4 @@ const CacheGraph = () => {
   );
 };
 
-export default CacheGraph;
+export default CacheTree;
