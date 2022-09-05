@@ -1,7 +1,7 @@
 import CacheSizeSelector from "./cache-size-selector/cache-size-selector";
 import RequestForm from "./request-form/request-form";
 import { useDispatch } from "react-redux";
-import { AppActions } from "../../store/actions";
+import { Actions } from "../../store/actions";
 import "./controls.css";
 
 const ClearCacheButton = () => {
@@ -9,9 +9,9 @@ const ClearCacheButton = () => {
   return (
     <button
       className="controls--clear-cache-button"
-      onClick={() => dispatch(AppActions.controlsActions.clearCache())}
+      onClick={() => dispatch(Actions.clearCache())}
     >
-      Clear Memory
+      Clear Cache
     </button>
   )
 }

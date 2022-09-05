@@ -1,8 +1,8 @@
 import { handleActions } from "redux-actions";
-import { controlsActions } from "../actions/controls-action";
 import { Cache } from "./helpers/cache-logic";
 import { constructTreeState } from "./helpers/tree-helpers";
 import { AppState, TreeState } from "../types/app-state-types";
+import { Actions } from "../actions";
 
 const createAppState = (numOfBlocks: number) => {
   return {
@@ -20,7 +20,7 @@ const createAppState = (numOfBlocks: number) => {
 
 const initAppState = createAppState(2);
 
-const { setCacheBlockSize, getRequest, clearCache } = controlsActions;
+const { setCacheBlockSize, sendRequest, clearCache } = Actions;
 
 export default handleActions<AppState, any> ({
   [setCacheBlockSize.toString()] (
@@ -30,9 +30,9 @@ export default handleActions<AppState, any> ({
     const { numOfBlocks } = payload;
     return createAppState(numOfBlocks);
   },
-  [getRequest.toString()] (
+  [sendRequest.toString()] (
     state,
-    {payload}: ReturnType<typeof getRequest>
+    {payload}: ReturnType<typeof sendRequest>
   ) {
     const { key } = payload;
     const stats = Cache.get(key, state);

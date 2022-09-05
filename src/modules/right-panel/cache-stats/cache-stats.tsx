@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { AppQueries } from "../../../store/queries/app-queries";
+import { Queries } from "../../../store/queries/app-queries";
 import CacheStatsRow from "./cache-stats-row";
 import "./cache-stats.css"
 
 const CacheStats = () => {
   const { numOfEmptyBlocks, numOfHits, numOfMisses } = useSelector(
-    AppQueries.getStats
+    Queries.getStats
   );
   return (
     <div className="cache-stats--main-root">

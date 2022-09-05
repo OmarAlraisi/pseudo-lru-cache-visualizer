@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AppActions } from "../../../store/actions";
+import { Actions } from "../../../store/actions";
 import "./request-form.css";
 
 const RequestForm = () => {
   const [fieldText, setFieldText] = useState("");
   const dispatch = useDispatch();
   const handleFormSubmit = (event: any) => {
-    dispatch(AppActions.controlsActions.getRequest(fieldText));
+    dispatch(Actions.sendRequest(fieldText));
     setFieldText("");
     event.preventDefault();
   };

@@ -1,8 +1,8 @@
 import {
   CacheBit,
   CacheBlock,
-  DirectionEnum,
-} from "../../store/types/classes-and-enums-types";
+} from "../../store/types/classes";
+import { DirectionEnum } from "../../store/types/constants";
 
 export const createNodes = (treeNodes: (CacheBit | CacheBlock)[]) => {
   const nodes = [];
@@ -11,7 +11,7 @@ export const createNodes = (treeNodes: (CacheBit | CacheBlock)[]) => {
     if (node instanceof CacheBit) {
       nodes.push({
         id: `${i}`,
-        text: `${node.direction}`,
+        text: `${node.direction === 1 ? "U" : "D"}`,
         height: 65,
         width: 65,
         disabled: true,

@@ -4,12 +4,12 @@
   justify-content: space-between;
   box-sizing: border-box;
   padding: 15px;
-  border-bottom: solid 1px black;
+  border-bottom: solid 2px black;
 }
 
 .controls--clear-cache-button {
   height: 30px;
-  width: 115px;
+  width: 105px;
   font-size: 16px;
   margin-bottom: auto;
   border: 1px solid black;

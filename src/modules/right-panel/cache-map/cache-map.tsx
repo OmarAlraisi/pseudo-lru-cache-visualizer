@@ -5,7 +5,7 @@ import "./cache-map.css";
 const CacheMap = () => {
   return (
     <div className="cache-map--main-root">
-      <TableRow mapKey="Key" path="Tree Path" data="Data" className="header" />
+      <TableRow mapKey="Key" data="Data" className="header" />
       <MapTable />
     </div>
   );

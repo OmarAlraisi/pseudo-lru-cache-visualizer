@@ -8,6 +8,8 @@ const getUpdateHelper = (state: State) => state.app.updateHelper;
 
 const getStats = (state: State) => state.app.stats;
 
-const getMap = (state: State) => state.app.map;
+const getMapKeys = (state: State) => Array.from(state.app.map.keys());
 
-export const AppQueries = { getNumOfBlocks, getTreeNodes, getUpdateHelper, getStats, getMap };
+const getMapValueByKey = (state: State, key: string) => state.app.map.get(key);
+
+export const Queries = { getNumOfBlocks, getTreeNodes, getUpdateHelper, getStats, getMapKeys, getMapValueByKey };

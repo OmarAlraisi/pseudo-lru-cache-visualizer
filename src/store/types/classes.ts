@@ -1,7 +1,4 @@
-export const DirectionEnum = {
-  UP: 1,
-  DOWN: 0,
-}
+import { DirectionEnum } from "./constants";
 
 export class CacheBit {
   direction: number;

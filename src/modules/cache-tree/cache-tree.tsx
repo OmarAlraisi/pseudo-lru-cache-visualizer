@@ -9,7 +9,7 @@ import {
   Node,
   NodeData,
 } from "reaflow";
-import { AppQueries } from "../../store/queries/app-queries";
+import { Queries } from "../../store/queries/app-queries";
 import { createEdges, createNodes } from "./canvas-helper";
 import "./cache-tree.css"
 
@@ -17,9 +17,9 @@ const CacheTree = () => {
   let nodes: NodeData[] = [],
     edges: EdgeData[] = [];
 
-  const numOfBlocks = useSelector(AppQueries.getNumOfBlocks),
-    updateHelper = useSelector(AppQueries.getUpdateHelper),
-    treeNodes = useSelector(AppQueries.getTreeNodes);
+  const numOfBlocks = useSelector(Queries.getNumOfBlocks),
+    updateHelper = useSelector(Queries.getUpdateHelper),
+    treeNodes = useSelector(Queries.getTreeNodes);
 
   useMemo(() => {
     nodes = createNodes(treeNodes);

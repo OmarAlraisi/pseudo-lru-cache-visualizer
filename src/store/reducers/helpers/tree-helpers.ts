@@ -1,4 +1,4 @@
-import { CacheBlock, CacheBit } from "../../types/classes-and-enums-types";
+import { CacheBlock, CacheBit } from "../../types/classes";
 
 export const constructTree = (level: number) => {
   if (!level) return new CacheBlock();

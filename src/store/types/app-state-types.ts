@@ -1,4 +1,4 @@
-import { CacheBit, CacheBlock } from "./classes-and-enums-types"
+import { CacheBit, CacheBlock } from "./classes"
 
 export type AppState = {
   numOfBlocks: number
