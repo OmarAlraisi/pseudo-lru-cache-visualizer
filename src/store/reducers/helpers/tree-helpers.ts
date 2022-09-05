@@ -36,6 +36,5 @@ export const constructTreeState = (level: number) => {
   return {
     rootNode: root,
     nodes: nodes,
-    updateHelper: true,
   }
 }

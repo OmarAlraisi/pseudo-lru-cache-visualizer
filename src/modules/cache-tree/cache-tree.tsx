@@ -18,7 +18,7 @@ const CacheTree = () => {
     edges: EdgeData[] = [];
 
   const numOfBlocks = useSelector(AppQueries.getNumOfBlocks),
-    updateHelper = useSelector(AppQueries.getTreeUpdateHelper),
+    updateHelper = useSelector(AppQueries.getUpdateHelper),
     treeNodes = useSelector(AppQueries.getTreeNodes);
 
   useMemo(() => {

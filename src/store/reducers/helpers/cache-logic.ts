@@ -6,8 +6,7 @@ import {
 } from "../../types/classes-and-enums-types";
 
 const get = (key: string, state: AppState) => {
-  const { map, tree, controls, stats } = state;
-  const { numOfBlocks } = controls;
+  const { map, tree, numOfBlocks, stats } = state;
   let { numOfHits, numOfMisses } = stats;
   if (!map.has(key)) {
     // cache miss

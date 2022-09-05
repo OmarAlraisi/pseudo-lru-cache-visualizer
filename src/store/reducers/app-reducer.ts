@@ -6,16 +6,15 @@ import { AppState, TreeState } from "../types/app-state-types";
 
 const createAppState = (numOfBlocks: number) => {
   return {
-    controls: {
-      numOfBlocks: numOfBlocks,
-    },
+    numOfBlocks: numOfBlocks,
     map: new Map<string, string>(),
     tree: constructTreeState(Math.log2(numOfBlocks)) as TreeState,
     stats: {
       numOfEmptyBlocks: numOfBlocks,
       numOfMisses: 0,
       numOfHits: 0,
-    }
+    },
+    updateHelper: true
   }
 }
 
@@ -40,15 +39,12 @@ export default handleActions<AppState, any> ({
     return {
       ...state,
       stats: stats,
-      tree: {
-        ...state.tree,
-        updateHelper: !state.tree.updateHelper,
-      }
+      updateHelper: !state.updateHelper,
     };
   },
   [clearCache.toString()] (
     state
   ) {
-    return createAppState(state.controls.numOfBlocks);
+    return createAppState(state.numOfBlocks);
   },
 }, initAppState);

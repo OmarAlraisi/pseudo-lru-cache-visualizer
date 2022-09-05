@@ -6,7 +6,7 @@ import "./map-table.css";
 
 const MapTable = () => {
   const map = useSelector(AppQueries.getMap);
-  const updateHelper = useSelector(AppQueries.getTreeUpdateHelper);
+  const updateHelper = useSelector(AppQueries.getUpdateHelper);
 
   let cacheKeys: string[] = [];
   useMemo(() => cacheKeys = Array.from(map.keys()), [updateHelper]);
