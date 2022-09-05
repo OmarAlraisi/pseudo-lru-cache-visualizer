@@ -1,6 +1,6 @@
 import { CacheBlock, CacheBit } from "../../types/classes";
 
-export const constructTree = (level: number) => {
+const constructTree = (level: number) => {
   if (!level) return new CacheBlock();
 
   const cacheBit = new CacheBit();
@@ -10,7 +10,7 @@ export const constructTree = (level: number) => {
 }
 
 // bfs
-export const constructNodesArray = (root: CacheBit) => {
+const constructNodesArray = (root: CacheBit) => {
   const nodes = [],
     queue = [];
 
@@ -33,8 +33,5 @@ export const constructNodesArray = (root: CacheBit) => {
 export const constructTreeState = (level: number) => {
   const root = constructTree(level) as CacheBit;
   const nodes = constructNodesArray(root as CacheBit);
-  return {
-    rootNode: root,
-    nodes: nodes,
-  }
+  return nodes;
 }

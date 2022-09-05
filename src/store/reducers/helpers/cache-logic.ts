@@ -6,15 +6,15 @@ import {
 import { DirectionEnum } from "../../types/constants";
 
 const get = (key: string, state: AppState) => {
-  const { map, tree, numOfBlocks, stats } = state;
+  const { map, treeNodes, numOfBlocks, stats } = state;
   let { numOfHits, numOfMisses } = stats;
   if (!map.has(key)) {
     // cache miss
-    addToCache(key, tree.rootNode, map);
+    addToCache(key, treeNodes[0] as CacheBit, map);
     numOfMisses += 1;
   } else {
     // cache hit
-    if (map.size === numOfBlocks) navigateToBlock(map.get(key)!, tree.rootNode);
+    if (map.size === numOfBlocks) navigateToBlock(map.get(key)!, treeNodes[0] as CacheBit);
     numOfHits += 1;
   }
   

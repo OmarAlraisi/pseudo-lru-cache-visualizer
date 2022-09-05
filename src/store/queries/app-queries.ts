@@ -2,7 +2,7 @@ import { State } from "../reducers";
 
 const getNumOfBlocks = (state: State) => state.app.numOfBlocks;
 
-const getTreeNodes = (state: State) => state.app.tree.nodes;
+const getTreeNodes = (state: State) => state.app.treeNodes;
 
 const getUpdateHelper = (state: State) => state.app.updateHelper;
 

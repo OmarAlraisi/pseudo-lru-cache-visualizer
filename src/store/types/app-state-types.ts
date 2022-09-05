@@ -3,14 +3,9 @@ import { CacheBit, CacheBlock } from "./classes"
 export type AppState = {
   numOfBlocks: number
   map: Map<string, string>,
-  tree: TreeState,
+  treeNodes: (CacheBit | CacheBlock)[],
   stats: StatsState,
   updateHelper: boolean,
-}
-
-export type TreeState = {
-  rootNode: CacheBit,
-  nodes: (CacheBit | CacheBlock)[],
 }
 
 export type StatsState = {

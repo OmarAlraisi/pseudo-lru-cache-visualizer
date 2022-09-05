@@ -1,14 +1,14 @@
 import { handleActions } from "redux-actions";
 import { Cache } from "./helpers/cache-logic";
 import { constructTreeState } from "./helpers/tree-helpers";
-import { AppState, TreeState } from "../types/app-state-types";
+import { AppState } from "../types/app-state-types";
 import { Actions } from "../actions";
 
 const createAppState = (numOfBlocks: number) => {
   return {
     numOfBlocks: numOfBlocks,
     map: new Map<string, string>(),
-    tree: constructTreeState(Math.log2(numOfBlocks)) as TreeState,
+    treeNodes: constructTreeState(Math.log2(numOfBlocks)),
     stats: {
       numOfEmptyBlocks: numOfBlocks,
       numOfMisses: 0,
