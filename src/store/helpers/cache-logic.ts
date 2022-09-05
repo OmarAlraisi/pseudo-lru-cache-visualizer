@@ -15,10 +15,10 @@ const get = (key: string, state: AppState) => {
     numOfMisses += 1;
   } else {
     // cache hit
-    navigateToBlock(map.get(key)!, tree.rootNode);
+    if (map.size === numOfBlocks) navigateToBlock(map.get(key)!, tree.rootNode);
     numOfHits += 1;
   }
-  navigateToNextLRBlock(map.get(key)!, tree.rootNode);
+  
   return {
     numOfEmptyBlocks: numOfBlocks - map.size,
     numOfMisses: numOfMisses,
@@ -39,6 +39,8 @@ const addToCache = (
 
   // Add to map
   map.set(key, path);
+
+  navigateToNextLRBlock(map.get(key)!, treeRoot);
 };
 
 // Returns the location and the block where the new data should be added
@@ -104,6 +106,8 @@ const navigateToBlock = (path: string, treeRoot: CacheBit) => {
       node = node.down as CacheBit;
     }
   }
+
+  navigateToNextLRBlock(path, treeRoot);
 };
 
 export const Cache = { get };

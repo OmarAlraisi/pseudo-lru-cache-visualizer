@@ -32,7 +32,7 @@ const CacheMap = () => {
           }% Hits`}</span>
           <span className="stats--row--label">{`${
             ((numOfMisses / (numOfHits + numOfMisses)) * 100) | 0
-          }% Hits`}</span>
+          }% Misses`}</span>
         </div>
       </div>
     );
