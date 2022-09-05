@@ -16,7 +16,7 @@ export class CacheBit {
     /* 
       Could be written as
         this.toggleDirection = () => this.direction = parseInt(!this.direction);
-      But for the sake of having clean consistent code it is written as
+      But for the sake of having clean and consistent code it is written as
     */
     this.toggleDirection = () => {
       if (this.direction === DirectionEnum.UP) this.direction = DirectionEnum.DOWN;

@@ -1,17 +1,17 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+
+import { useEffect, useMemo, useRef } from "react";
 import { useSelector } from "react-redux";
 import {
   Canvas,
   CanvasRef,
-  Edge,
   EdgeData,
   Label,
   Node,
   NodeData,
 } from "reaflow";
-import { AppQueries } from "../../../store/queries/app-queries";
+import { AppQueries } from "../../store/queries/app-queries";
 import { createEdges, createNodes } from "./canvas-helper";
-import "./tree.css";
+import "./cache-tree.css"
 
 const CacheTree = () => {
   let nodes: NodeData[] = [],
@@ -46,7 +46,7 @@ const CacheTree = () => {
       <div>
         <Canvas
           direction="RIGHT"
-          maxWidth={window.innerWidth - window.innerWidth * 0.3} // TODO: make dynamic
+          maxWidth={window.innerWidth - window.innerWidth * 0.3}
           maxHeight={window.innerHeight - 120}
           fit={true}
           minZoom={-0.95}

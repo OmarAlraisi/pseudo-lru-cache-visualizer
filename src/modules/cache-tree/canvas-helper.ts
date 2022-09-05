@@ -1,9 +1,8 @@
-import { EdgeData } from "reaflow";
 import {
   CacheBit,
   CacheBlock,
   DirectionEnum,
-} from "../../../store/types/classes-and-enums-types";
+} from "../../store/types/classes-and-enums-types";
 
 export const createNodes = (treeNodes: (CacheBit | CacheBlock)[]) => {
   const nodes = [];

@@ -1,17 +1,12 @@
-.cache-map--main-root {
-  border-left: solid 1px black;
-  width: 30vw;
-}
-
-.cache-map--stats {
+.cache-stats--main-root {
   padding: 0 20px;
   box-sizing: border-box;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   display: flex;
   flex-direction: column;
 }
 
-.cache-map--stats--row {
+.cache-stats--row {
   width: 100%;
   padding: 10px 0;
   display: flex;
@@ -19,7 +14,7 @@
   border-bottom: 1px dashed black;
 }
 
-.cache-map--stats--row:last-child {
+.cache-stats--row:last-child {
   border-bottom: 0;
 }
 

@@ -24,12 +24,13 @@
   border-bottom: 0;
 }
 
-.table-column--separator {
+.table-row--column--separator {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.table-column {
+
+.table-row--column {
   height: 35px;
   border: 1px solid black;
   display: flex;
@@ -37,11 +38,11 @@
   align-items: center;
 }
 
-.table-column.key {
+.table-row--column.key {
   width: 35%;
 }
 
-.table-column.value {
+.table-row--column.value {
   width: 55%;
 }
 

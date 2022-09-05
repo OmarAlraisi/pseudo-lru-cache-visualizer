@@ -1,7 +1,7 @@
 import { handleActions } from "redux-actions";
 import { controlsActions } from "../actions/controls-action";
-import { Cache } from "../helpers/cache-logic";
-import { constructTreeState } from "../helpers/tree-helpers";
+import { Cache } from "./helpers/cache-logic";
+import { constructTreeState } from "./helpers/tree-helpers";
 import { AppState, TreeState } from "../types/app-state-types";
 
 const createAppState = (numOfBlocks: number) => {

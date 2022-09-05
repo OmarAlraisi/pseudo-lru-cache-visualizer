@@ -1,9 +1,9 @@
-import { AppState } from "../types/app-state-types";
+import { AppState } from "../../types/app-state-types";
 import {
   CacheBit,
   CacheBlock,
   DirectionEnum,
-} from "../types/classes-and-enums-types";
+} from "../../types/classes-and-enums-types";
 
 const get = (key: string, state: AppState) => {
   const { map, tree, controls, stats } = state;

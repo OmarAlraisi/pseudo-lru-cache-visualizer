@@ -1,18 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AppActions } from "../../../../store/actions";
+import { AppActions } from "../../../store/actions";
 import "./request-form.css";
 
 const RequestForm = () => {
   const [fieldText, setFieldText] = useState("");
-  const handleFieldChange = (event: any) => {
-    setFieldText(event.target.value);
-  };
-
   const dispatch = useDispatch();
-
-  const sendRequest = (event: any) => {
-    // hand request
+  const handleFormSubmit = (event: any) => {
     dispatch(AppActions.controlsActions.getRequest(fieldText));
     setFieldText("");
     event.preventDefault();
@@ -23,13 +17,13 @@ const RequestForm = () => {
       <form
         action="submit"
         className="request-form--form"
-        onSubmit={(event) => sendRequest(event)}
+        onSubmit={(event) => handleFormSubmit(event)}
       >
         <input
           type="text"
           placeholder="Request key..."
           value={fieldText}
-          onChange={(event) => handleFieldChange(event)}
+          onChange={(event) => setFieldText(event.target.value)}
         />
         <button type="submit">Request</button>
       </form>

@@ -11,9 +11,9 @@ interface TableRowProps {
 const TableRow = ({ mapKey, data = "...", path, className }: TableRowProps) => {
   return (
     <div className={classNames("table-row--main-root", className)}>
-      <div className="table-column key">{mapKey}</div>
-      <span className="table-column--separator">:</span>
-      <div className="table-column value">
+      <div className="table-row--column key">{mapKey}</div>
+      <span className="table-row--column--separator">:</span>
+      <div className="table-row--column value">
         <span className="value-text path">
           {path === "Tree Path" ? path : path.split("").join(" – ")}
         </span>

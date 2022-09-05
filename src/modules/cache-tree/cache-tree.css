@@ -1,4 +1,4 @@
-.cache-tree {
+.cache-tree--main-root {
   width: 70vw;
   height: 100%;
   display: flex;
@@ -21,8 +21,8 @@
 }
 
 /* stale edges */
-.edge {
-}
+/* .edge {
+} */
 
 /* hidden eddges */
 .hide-edge {

@@ -1,6 +1,6 @@
 // redux imports
 import { identity } from "lodash";
-import { legacy_createStore as createStore, applyMiddleware, compose } from "redux";
+import { applyMiddleware, compose, legacy_createStore as createStore } from "redux";
 import thunk from "redux-thunk";
 
 // Reducers import
