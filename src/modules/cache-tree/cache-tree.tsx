@@ -45,9 +45,10 @@ const CacheTree = () => {
     <div className="cache-tree--main-root">
       <div>
         <Canvas
-          direction="RIGHT"
+          direction="DOWN"
+          // direction="RIGHT"
           maxWidth={window.innerWidth - window.innerWidth * 0.3}
-          maxHeight={window.innerHeight - 120}
+          maxHeight={window.innerHeight - 125}
           fit={true}
           minZoom={-0.95}
           nodes={nodes}

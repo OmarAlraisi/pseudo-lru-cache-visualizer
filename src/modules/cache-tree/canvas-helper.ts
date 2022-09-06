@@ -11,7 +11,7 @@ export const createNodes = (treeNodes: (CacheBit | CacheBlock)[]) => {
     if (node instanceof CacheBit) {
       nodes.push({
         id: `${i}`,
-        text: `${node.direction === 1 ? "U" : "D"}`,
+        text: `${node.direction === 1 ? "L" : "R"}`,
         height: 65,
         width: 65,
         disabled: true,
@@ -50,7 +50,7 @@ export const createEdges = (
       to: `${i * 2 + 1}`,
       disabled: true,
       className:
-        (treeNodes[i] as CacheBit).direction === DirectionEnum.UP
+        (treeNodes[i] as CacheBit).direction === DirectionEnum.LEFT
           ? i === 0 || edges[i - 1].className === "animate-edge"
             ? "animate-edge"
             : "edge"
@@ -62,7 +62,7 @@ export const createEdges = (
       to: `${i * 2 + 2}`,
       disabled: true,
       className:
-        (treeNodes[i] as CacheBit).direction === DirectionEnum.UP
+        (treeNodes[i] as CacheBit).direction === DirectionEnum.LEFT
           ? "hide-edge"
           : i === 0 || edges[i - 1].className === "animate-edge"
           ? "animate-edge"

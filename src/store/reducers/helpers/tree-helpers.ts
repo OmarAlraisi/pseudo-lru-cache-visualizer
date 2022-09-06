@@ -4,8 +4,8 @@ const constructTree = (level: number) => {
   if (!level) return new CacheBlock();
 
   const cacheBit = new CacheBit();
-  cacheBit.up = constructTree(level - 1);
-  cacheBit.down = constructTree(level - 1);
+  cacheBit.left= constructTree(level - 1);
+  cacheBit.right = constructTree(level - 1);
   return cacheBit;
 }
 
@@ -20,8 +20,8 @@ const constructNodesArray = (root: CacheBit) => {
     var curr = queue.shift() as CacheBit | CacheBlock;
 
     if (curr instanceof CacheBit) {
-      queue.push(curr.up);
-      queue.push(curr.down);
+      queue.push(curr.left);
+      queue.push(curr.right);
     }
 
     nodes.push(curr);

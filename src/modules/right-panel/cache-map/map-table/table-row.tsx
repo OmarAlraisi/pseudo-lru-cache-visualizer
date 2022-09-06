@@ -23,7 +23,7 @@ const TableRow = ({ mapKey, data = "...", className }: TableRowProps) => {
             : path
               ? path === "Tree Path"
                 ? path 
-                : path.split("").join(" – ").replaceAll("1", "U").replaceAll("0", "D")
+                : path.split("").join(" – ").replaceAll("1", "L").replaceAll("0", "R")
               : ""
           }
         </span>
