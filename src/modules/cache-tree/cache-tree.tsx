@@ -1,5 +1,5 @@
 
-import { useEffect, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useSelector } from "react-redux";
 import {
   Canvas,
@@ -20,6 +20,8 @@ const CacheTree = () => {
   const numOfBlocks = useSelector(Queries.getNumOfBlocks),
     updateHelper = useSelector(Queries.getUpdateHelper),
     treeNodes = useSelector(Queries.getTreeNodes);
+  
+  const ref = useRef<CanvasRef | null>(null);
 
   useMemo(() => {
     nodes = createNodes(treeNodes);
@@ -31,12 +33,6 @@ const CacheTree = () => {
     nodes[lruBlock].className += " lru-block-node";
   }, [updateHelper, treeNodes]);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {});
-  });
-
-  const ref = useRef<CanvasRef | null>(null);
-
   useMemo(() => {
     setTimeout(() => ref.current?.fitCanvas?.(), 150);
   }, [numOfBlocks]);
@@ -46,7 +42,6 @@ const CacheTree = () => {
       <div>
         <Canvas
           direction="DOWN"
-          // direction="RIGHT"
           maxWidth={window.innerWidth - window.innerWidth * 0.3}
           maxHeight={window.innerHeight - 125}
           fit={true}
