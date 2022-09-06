@@ -1,0 +1,35 @@
+.canvas-controller--main-root {
+  position: absolute;
+  bottom: 5px;
+  right: calc(30vw + 5px);
+  width: 130px;
+  height: 90px;
+  background: rgb(250, 250, 250);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: 1px solid rgb(125, 125, 125);
+}
+
+.canvas-controller--fit-button {
+  width: 90%;
+  height: 25px;
+}
+
+.canvas-controller--zoom-controllers {
+  width: 90%;
+  padding-right: 5px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.zoom-controller--button {
+  width: 25px;
+  height: 25px;
+}

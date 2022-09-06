@@ -3,6 +3,7 @@ import { useMemo, useRef } from "react";
 import { useSelector } from "react-redux";
 import {
   Canvas,
+  CanvasPosition,
   CanvasRef,
   EdgeData,
   Label,
@@ -12,6 +13,7 @@ import {
 import { Queries } from "../../store/queries/app-queries";
 import { createEdges, createNodes } from "./canvas-helper";
 import "./cache-tree.css"
+import CanvasController from "./controller/canvas-controller";
 
 const CacheTree = () => {
   let nodes: NodeData[] = [],
@@ -37,15 +39,22 @@ const CacheTree = () => {
     setTimeout(() => ref.current?.fitCanvas?.(), 150);
   }, [numOfBlocks]);
 
+  /** Handlers */
+  const canvasFitHandler = () => ref.current?.fitCanvas?.();
+  const canvasZoomInHandler = () => ref.current?.zoomIn?.();
+  const canvasZoomOutHandler = () => ref.current?.zoomOut?.();
+
   return (
     <div className="cache-tree--main-root">
+      <CanvasController fitHandler={canvasFitHandler} zoomInHandler={canvasZoomInHandler} zoomOutHandler={canvasZoomOutHandler}/>
       <div>
         <Canvas
           direction="DOWN"
           maxWidth={window.innerWidth - window.innerWidth * 0.3}
           maxHeight={window.innerHeight - 125}
           fit={true}
-          minZoom={-0.95}
+          zoomable={false}
+          minZoom={-0.77}
           nodes={nodes}
           edges={edges}
           ref={ref}
