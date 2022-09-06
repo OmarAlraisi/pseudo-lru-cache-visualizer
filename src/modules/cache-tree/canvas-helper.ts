@@ -14,6 +14,7 @@ export const createNodes = (treeNodes: (CacheBit | CacheBlock)[]) => {
         text: `${node.direction === 1 ? "L" : "R"}`,
         height: 65,
         width: 65,
+        className: "node",
         disabled: true,
       });
     } else {

@@ -7,17 +7,17 @@
 }
 
 .node {
-  fill: whitesmoke;
-  stroke: black;
+  fill: whitesmoke !important;
+  stroke: black !important;
 }
 
 .block-node {
-  fill: lightcyan;
+  fill: lightcyan !important;
 }
 
 /* This is the lru block */
 .lru-block-node {
-  fill: lightblue;
+  fill: lightblue !important;
 }
 
 /* stale edges */

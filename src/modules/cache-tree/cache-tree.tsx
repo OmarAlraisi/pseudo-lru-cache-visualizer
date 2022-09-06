@@ -3,7 +3,6 @@ import { useMemo, useRef } from "react";
 import { useSelector } from "react-redux";
 import {
   Canvas,
-  CanvasPosition,
   CanvasRef,
   EdgeData,
   Label,
@@ -12,8 +11,8 @@ import {
 } from "reaflow";
 import { Queries } from "../../store/queries/app-queries";
 import { createEdges, createNodes } from "./canvas-helper";
-import "./cache-tree.css"
 import CanvasController from "./controller/canvas-controller";
+import "./cache-tree.css"
 
 const CacheTree = () => {
   let nodes: NodeData[] = [],
@@ -32,7 +31,7 @@ const CacheTree = () => {
       EdgeData<any>[],
       number
     ];
-    nodes[lruBlock].className += " lru-block-node";
+    nodes[lruBlock].className = "lru-block-node";
   }, [updateHelper, treeNodes]);
 
   useMemo(() => {
@@ -60,7 +59,6 @@ const CacheTree = () => {
           ref={ref}
           node={
             <Node
-              className="node"
               label={<Label style={{ fill: "black" }} />}
             />
           }
