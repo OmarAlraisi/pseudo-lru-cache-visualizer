@@ -7,25 +7,25 @@
 
 .request-form--form {
   display: flex;
-  height: 45px;
+  height: 40px;
 }
 
 .request-form--form input {
   width: 195px;
   margin-right: 20px;
-  border: 1px solid #483D3F;
+  border: 1px solid #483d3f;
   background: #bda48f7a;
   border-radius: 5px;
   padding-left: 5px;
   font-size: 16px;
-  color: #483D3F;
+  color: #483d3f;
 }
 
 .request-form--form button {
   width: 100px;
   border-radius: 5px;
-  border: 1px solid #483D3F;
+  border: 1px solid #483d3f;
   background: #bda48f7a;
   font-size: 16px;
-  color: #483D3F;
+  color: #483d3f;
 }

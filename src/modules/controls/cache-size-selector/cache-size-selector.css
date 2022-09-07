@@ -11,8 +11,10 @@
 
 .cache-size-selector--selector {
   padding: 10px;
-  border: 1px solid #483D3F;
-  color: #483D3F;
+  width: 65px;
+  height: 40px;
+  border: 1px solid #483d3f;
+  color: #483d3f;
   border-radius: 5px;
   font-size: large;
   background: #bda48f7a;
