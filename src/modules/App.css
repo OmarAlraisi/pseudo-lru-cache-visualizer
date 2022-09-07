@@ -68,12 +68,12 @@
 
 @media (min-width: 1000px) and (min-height: 565px){
   .invalid-screen--main-root {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (max-width: 999px) or (max-height: 564px) {
   .App {
-    opacity: 0;
+    display: none !important;
   }
 }

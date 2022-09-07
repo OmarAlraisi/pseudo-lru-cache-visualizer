@@ -1,7 +1,7 @@
 .cache-stats--main-root {
   padding: 0 20px;
   box-sizing: border-box;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #483D3F;
   display: flex;
   flex-direction: column;
 }
@@ -11,7 +11,7 @@
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed #483D3F;
 }
 
 .cache-stats--row:last-child {

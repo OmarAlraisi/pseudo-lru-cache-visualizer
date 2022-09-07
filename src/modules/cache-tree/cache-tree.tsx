@@ -2,10 +2,13 @@
 import { useMemo, useRef } from "react";
 import { useSelector } from "react-redux";
 import {
+  Arrow,
   Canvas,
   CanvasRef,
+  Edge,
   EdgeData,
   Label,
+  MarkerArrow,
   Node,
   NodeData,
 } from "reaflow";
@@ -59,9 +62,10 @@ const CacheTree = () => {
           ref={ref}
           node={
             <Node
-              label={<Label style={{ fill: "black" }} />}
+              label={<Label style={{ fill: "#F4EBD9" }} />}
             />
           }
+          arrow={<MarkerArrow style={{ fill: '#A39A92' }} />}
         />
       </div>
     </div>

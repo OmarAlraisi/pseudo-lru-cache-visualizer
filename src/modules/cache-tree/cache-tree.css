@@ -7,27 +7,26 @@
 }
 
 .node {
-  fill: whitesmoke !important;
+  fill: #bda48f !important;
   stroke: black !important;
 }
 
 .block-node {
-  fill: lightcyan !important;
+  fill: #77685D !important;
 }
 
 /* This is the lru block */
 .lru-block-node {
-  fill: lightblue !important;
+  fill: #483D3F !important;
 }
 
 /* stale edges */
-/* .edge {
-} */
+.edge {
+  stroke: #A39A92;
+}
 
 /* hidden eddges */
 .hide-edge {
-  stroke-dasharray: 5;
-  /* animation: animate-line 5s linear infinite, hide-edge 0.5s ease-in; */
   opacity: 0;
 }
 
@@ -35,6 +34,8 @@
 .animate-edge {
   stroke-dasharray: 5;
   animation: edge-animation 0.5s ease-in, animate-line 5s linear infinite;
+  stroke: #A39A92;
+  stroke-width: 2px;
 }
 
 @keyframes animate-line {

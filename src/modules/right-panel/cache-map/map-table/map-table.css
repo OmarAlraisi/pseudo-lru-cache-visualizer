@@ -13,11 +13,11 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  border-bottom: dashed 1px black;
+  border-bottom: dashed 1px #483D3F;
 }
 
 .table-row--main-root.header {
-  border-bottom: 1px black solid;
+  border-bottom: 1px #483D3F solid;
 }
 
 .table-row--main-root:last-child {
@@ -33,7 +33,7 @@
 .table-row--column {
   height: 35px;
   font-size: 14px;
-  border: 1px solid black;
+  border: 1px solid #483D3F;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,5 +60,5 @@
 
 .value-text.data {
   width: 25%;
-  border-left: 1px black solid;
+  border-left: 1px #483D3F solid;
 }

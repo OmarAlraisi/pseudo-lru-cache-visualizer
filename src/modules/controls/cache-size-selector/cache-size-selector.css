@@ -11,7 +11,9 @@
 
 .cache-size-selector--selector {
   padding: 10px;
-  border: 2px solid black;
+  border: 1px solid #483D3F;
+  color: #483D3F;
   border-radius: 5px;
   font-size: large;
+  background: #bda48f7a;
 }
