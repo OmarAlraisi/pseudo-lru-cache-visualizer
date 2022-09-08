@@ -6,15 +6,16 @@ import "./map-table.css";
 
 interface TableRowProps {
   mapKey: string;
-  data?: string;
   className?: string;
 }
 
-const TableRow = ({ mapKey, data = "...", className }: TableRowProps) => {
+const TableRow = ({ mapKey, className }: TableRowProps) => {
   const path = useSelector((state: {app: AppState}) => Queries.getMapValueByKey(state, mapKey));
   return (
     <div className={classNames("table-row--main-root", className)}>
-      <div className="table-row--column key">{mapKey}</div>
+      <div className="table-row--column key">
+        <span className="table-row--column--key-text">{mapKey}</span>
+      </div>
       <span className="table-row--column--separator">:</span>
       <div className="table-row--column value">
         <span className="value-text path">
@@ -27,7 +28,6 @@ const TableRow = ({ mapKey, data = "...", className }: TableRowProps) => {
               : ""
           }
         </span>
-        <span className="value-text data">{data}</span>
       </div>
     </div>
   );

@@ -32,7 +32,6 @@
 
 .table-row--column {
   height: 35px;
-  font-size: 14px;
   border: 1px solid #483D3F;
   display: flex;
   justify-content: center;
@@ -40,11 +39,23 @@
 }
 
 .table-row--column.key {
-  width: 35%;
+  width: 30%;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.table-row--column--key-text {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 
 .table-row--column.value {
-  width: 55%;
+  width: 62%;
 }
 
 .value-text {

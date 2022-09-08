@@ -16,6 +16,7 @@ import { Queries } from "../../store/queries/app-queries";
 import { createEdges, createNodes } from "./canvas-helper";
 import CanvasController from "./controller/canvas-controller";
 import "./cache-tree.css"
+import CanvasKey from "./canvas-key/canvas-key";
 
 const CacheTree = () => {
   let nodes: NodeData[] = [],
@@ -49,6 +50,7 @@ const CacheTree = () => {
   return (
     <div className="cache-tree--main-root">
       <CanvasController fitHandler={canvasFitHandler} zoomInHandler={canvasZoomInHandler} zoomOutHandler={canvasZoomOutHandler}/>
+      {/* <CanvasKey /> */}
       <div>
         <Canvas
           direction="DOWN"

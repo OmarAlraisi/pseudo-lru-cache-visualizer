@@ -1,0 +1,48 @@
+.canvas-key--main-root {
+  opacity: 0.2;
+  position: absolute;
+  top: 125px;
+  right: calc(30vw + 5px);
+  width: 400px;
+  height: 90px;
+  background: #bda48f7a;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: 1px solid #483d3f;
+  border-radius: 5px;
+}
+
+.canvas-key--main-root:hover {
+  opacity: 1;
+}
+
+.canvas-key--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 33.3333333333%;
+}
+
+.canvas-key--node {
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid black;
+  border-radius: 3px;
+}
+
+.canvas-key--node.cache-bit {
+  background: #bda48f;
+}
+
+.canvas-key--node.cache-block {
+  background: #77685d;
+}
+
+.canvas-key--node.lru-block {
+  background: #483d3f;
+}
