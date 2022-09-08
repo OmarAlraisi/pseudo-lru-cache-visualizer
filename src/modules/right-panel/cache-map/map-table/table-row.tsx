@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import { Queries } from "../../../../store/queries/app-queries";
-import { AppState } from "../../../../store/types/app-state-types";
+import { State } from "../../../../store/reducers";
 import "./map-table.css";
 
 interface TableRowProps {
@@ -10,7 +10,15 @@ interface TableRowProps {
 }
 
 const TableRow = ({ mapKey, className }: TableRowProps) => {
-  const path = useSelector((state: {app: AppState}) => Queries.getMapValueByKey(state, mapKey));
+  const path = useSelector(
+    (state: State) => Queries.getMapValueByKey(state, mapKey)
+  );
+  const getPathText = () => {
+    if (className) return "Pointer Path";
+    if (!path) return "";
+    return path.split("").join(" - ").replaceAll("1", "L").replaceAll("0", "R");
+  }
+
   return (
     <div className={classNames("table-row--main-root", className)}>
       <div className="table-row--column key">
@@ -18,16 +26,7 @@ const TableRow = ({ mapKey, className }: TableRowProps) => {
       </div>
       <span className="table-row--column--separator">:</span>
       <div className="table-row--column value">
-        <span className="value-text path">
-          {className 
-            ? "Path to Key"
-            : path
-              ? path === "Tree Path"
-                ? path 
-                : path.split("").join(" – ").replaceAll("1", "L").replaceAll("0", "R")
-              : ""
-          }
-        </span>
+        <span className="value-text path">{getPathText()}</span>
       </div>
     </div>
   );
