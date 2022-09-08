@@ -12,17 +12,17 @@
 }
 
 .block-node {
-  fill: #77685D !important;
+  fill: #77685d !important;
 }
 
 /* This is the lru block */
 .lru-block-node {
-  fill: #483D3F !important;
+  fill: #483d3f !important;
 }
 
 /* stale edges */
 .edge {
-  stroke: #A39A92;
+  stroke: #a39a92;
 }
 
 /* hidden eddges */
@@ -34,7 +34,7 @@
 .animate-edge {
   stroke-dasharray: 5;
   animation: edge-animation 0.5s ease-in, animate-line 5s linear infinite;
-  stroke: #A39A92;
+  stroke: #a39a92;
   stroke-width: 2px;
 }
 

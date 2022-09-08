@@ -11,15 +11,16 @@
   justify-content: space-evenly;
   align-items: center;
 
-  border: 1px solid #483D3F;
+  border: 1px solid #483d3f;
   border-radius: 5px;
 }
 
 .canvas-controller--fit-button {
   width: 90%;
   height: 25px;
-  border: 1px solid #483D3F;
-  color: #483D3F;
+  font-size: 16px;
+  border: 1px solid #483d3f;
+  color: #483d3f;
   border-radius: 5px;
   background: #bda48f7a;
 }
@@ -37,8 +38,9 @@
 .zoom-controller--button {
   width: 25px;
   height: 25px;
-  border: 1px solid #483D3F;
-  color: #483D3F;
+  border: 1px solid #483d3f;
+  color: #483d3f;
+  font-size: 16px;
   border-radius: 5px;
   background: #bda48f7a;
 }

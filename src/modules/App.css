@@ -6,6 +6,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 0;
 }
 
 .App select:hover,
@@ -20,10 +21,12 @@
 
 .invalid-screen--main-root {
   font-family: sans-serif;
+  background: #f4ebd9;
   position: absolute;
-  background: white;
-  height: 100vh;
-  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,9 +69,12 @@
   color: rgb(125, 125, 125);
 }
 
-@media (min-width: 1000px) and (min-height: 565px){
+@media (min-width: 1000px) and (min-height: 565px) {
   .invalid-screen--main-root {
     display: none !important;
+  }
+  .App {
+    opacity: 1;
   }
 }
 
